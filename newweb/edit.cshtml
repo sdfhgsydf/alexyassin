@@ -1,0 +1,37 @@
+@page
+@model EditModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            <div class="onfromatin">
+                <p>: الاسم الكامل</p>
+                <input type="text" id="namefull" name="namefull" value="@Model.Input.NameFull">
+                <p>: العنوان</p>
+                <input type="text" id="address" name="address" value="@Model.Input.Address">
+                <p>: الشهادة</p>
+                <input type="text" id="shada" name="shada" value="@Model.Input.Shada">
+                <p>: الحالة الزوجية</p>
+                <input type="checkbox" id="single" name="marital_status[]" value="single" @(Model.Input.MaritalStatus.Contains("single") ? "checked" : "")> اعزب / عزباء
+                <input type="checkbox" id="married" name="marital_status[]" value="married" @(Model.Input.MaritalStatus.Contains("married") ? "checked" : "")> متزوج / متزوجة
+                <input type="checkbox" id="widow" name="marital_status[]" value="widow" @(Model.Input.MaritalStatus.Contains("widow") ? "checked" : "")> أرمل / أرملة
+                <p>: سنة التخرج</p>
+                <input type="date" id="graduationYear" name="graduation_year" value="@Model.Input.GraduationYear">
+                <p>: تاريخ</p>
+                <input type="date" id="date" name="date" value="@Model.Input.Date">
+                <p>: الرقم التعيين</p>
+                <input type="number" id="number" name="number" value="@Model.Input.Number">
+            </div>
+            <button type="submit">تحديث</button>
+            
+        </form>
+    </div>
+</body>
+</html>

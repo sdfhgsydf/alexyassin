@@ -1,0 +1,24 @@
+@page
+@model IndexModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <ul id="name-list">
+            <ol>
+                @foreach (var person in Model.People)
+                {
+                    <li>@person.Name<button onclick="editName('@person.Id')">Edit</button> <p>@person.Occupation</p></li>
+                }
+            </ol>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
